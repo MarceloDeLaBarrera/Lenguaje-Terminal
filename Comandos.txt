@@ -8,3 +8,5 @@ cls --> limpiar
 CTRL + C  -->interrumpir.
 CTRL + R --> Buscar entre los comandos utilizados
 ls --> listar contenido directorio
+
+windows+shift+s --> realizar captura de pantalla recorte.
