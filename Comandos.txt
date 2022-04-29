@@ -10,3 +10,28 @@ CTRL + R --> Buscar entre los comandos utilizados
 ls --> listar contenido directorio
 
 windows+shift+s --> realizar captura de pantalla recorte.
+
+windows + v --> para ver portapapeles
+
+
+
+
+Linux:
+
+explorer.exe . --> Para abrir carpeta donde esta montado linux
+ls -ashl   ---> Para listar todo
+
+mkdir <nombredirectorio>   --> crear directorio.
+rm -rf <nombre carpeta o archivo>  --> Para borrar posicionado en carpeta donde se encuentre carpeta/archivo a borrar.
+
+nano <nombrearchivo> --> para modificar archivo
+touch <nombrearchivo> --> para crear archivo
+
+
+ssh-keygen   -> puros enter para generar ssh-key
+cat <ruta ssh>  -->  para abrirla y ver contenido
+
+code . --> en ruta de proyecto, para abrir proyecto con linux en vscode 
+
+
+

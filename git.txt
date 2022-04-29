@@ -44,10 +44,20 @@ GITFLOW
 #---------------------------------------------------------#
 git hf feature start <nombrerama> ---> crear rama feature, pushearla, y checkout.
 git hf feature finish ---> finalizar rama feature.
+git hf cancel -f --> cancelar una rama o finalizarla sin necesidad de que se haya hecho la pull request
 git hf push --> pushear cambios
 
 
+git hf release start <release-version>   --> Para iniciar release a partir de develop, una vez se ha hecho pull request, y merge de la feature con develop.
+git hf release finish <release-version> ---> Para finalizar release una vez se ha hecho el merge entre el release y master.
 
+Posterior al comando anterior se modificará archivo en pantalla nano añadiendo:
+Release 2.5.0
+
+Changelog
+* #138 Se añade A/B testing con Google Optimize
+
+*****Nota: 138... es el pull request que se hizo entre feature y develop.*****
 
 #---------------------------------------------------------#
 git help --> Muestra los comandos y lo que hacen
