@@ -1,0 +1,30 @@
+CTRL + SPACE BAR ==> para importar una libreria o clase cuando se esta haciendo uso de ella con un decorador con arroba. Para ver parametros pertenecientes al decorador.
+CTRL + CLICK ==> Ir a la definicion
+CTRL + E ==> Para autocompletar html.
+CTRL + SHIFT + F ==> Formatear
+
+En consola, en directorio del proyecto: --> Para generar jar package. Tambien dentro del sts, se puede hacen maven install
+.\mvnw.cmd package
+
+
+
+Hacer deploy local del proyecto jar, en servidor tomcat, para acceder desde el navegador, en directorio del proyecto:
+java -jar .\target\<nombre-proyecto.jar>
+
+
+En tomcat:
+Para hacer deploy con servidor externo, hay que colocarse en la carpeta bin del servidor, y abrir la consola ahi:
+tomcat =   .\startup.bat
+jboss=     .\standalone.bat      .... Despues se debe abrir la consola especifica de jboss --=  .\jboss-cli.bat -c
+
+
+Luego se debe mover el archivo war generado con eclipse a la carpeta del servidor externo "webapps".. Y con eso deberia iniciar el deploy.
+Si no inicia, moverse dentro de la carpeta webapps en consola y usar:
+
+tomcat:      java -jar .\webapps\<nombre-proyecto.war>
+jbos:        una vez dentro de la consola --=  deploy <ruta archivo war> 
+
+Para bajar el servidor, desde directorio bin:
+tomcat:  .\shutdown.bat
+jboss: shutdown    ... y luego:     exit
+

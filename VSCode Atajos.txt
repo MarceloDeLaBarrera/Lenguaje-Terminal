@@ -1,0 +1,12 @@
+CTRL+S =SAVE
+CTRL+F= FIND
+CTRL+Z = UNDO
+CTRL+Y= REDO
+CTRL + D = Seleccionar mas de un elemento para editarlo al mismo tiempo.
+CTRL+SHIFT+P = MOSTRAR COMANDOS
+F12= IR A DEFINICION
+CTRL+ SHIFT + C= OPEN NEW TERMINAL
+CTRL + SHIFT + 7 = COMENTAR CODIGO SELECCIONADO
+
+Utilidad WRAP HTML
+CTRL+ SHIFT + P --> Seleccionar WRAP --> teclear empaquetador (div,table,section, etcetc)

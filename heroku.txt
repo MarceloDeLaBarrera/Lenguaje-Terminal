@@ -1,0 +1,56 @@
+heroku --version  
+
+heroku help --> para ver los comandos
+heroku <comando> --help --> ver mas detalle del comando.
+
+heroku login  --> login por navegador
+heroku login -i --> login en cli
+
+heroku create <nameapp> --> para crear app heroku, debe ser en directorio de aplicacion que se desea deployar. Ademas, esto añade un repo remoto en git. (confirmar)
+
+heroku git:remote -a <nombre de tu aplicación heroku>  --> ligar app heroku al repo de git.
+
+heroku addons:create heroku-postgresql:hobby-dev  --> para crear bbdd en heroku y variable de entorno " DATABASE_URL "
+
+git push heroku
+
+Si no funciona lo anterior --> heroku config:set DISABLE_COLLECTSTATIC=1
+
+heroku logs -t -a --> para ver como va el deploy en consola
+
+heroku open  --> para abrir en navegador website app
+
+heroku local --> para correr el proyecto heroku en local http://localhost:5000/
+
+heroku run bash (para correr comandos o moverse dentro del server)
+
+heroku run python manage.py 
+
+heroku run python manage.py migrate
+
+heroku run python manage.py collectstatic
+
+heroku pg:info --app <nombreapp> --> INFO DE LA DATABASE
+heroku pg:psql <Add-on> --app <name_of_app> < my_sql_file.sql  --> para cargar un archivo sql con querys.
+
+
+heroku config | findstr <nombrevariable entorno> --> para obtener el contenido almacenado dentro de una variable de entorno.
+
+
+
+
+
+
+
+CUENTAMIA:
+snaker.extreme.15@gmail.com
+elnuker_15*
+
+usando django-heroku tutorial
+https://www.youtube.com/watch?v=5d8AQFF0Ot0
+https://www.youtube.com/watch?v=XZoTukqekzY&t=3s
+
+
+https://codigofacilito.com/articulos/deploy-django-heroku
+https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Deployment
+https://realpython.com/django-hosting-on-heroku/

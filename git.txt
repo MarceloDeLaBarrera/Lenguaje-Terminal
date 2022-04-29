@@ -1,0 +1,144 @@
+Cuando se hace un add y commit son como snapshots del proyecto en un determinado momento.
+
+
+##SUBIR REPO -  PASOS##  (Sirve cuando es proyecto propio, o se es miembro de otro proyecto, si no, no permite pushear.)
+1.-En github=> Crear nuevo repositorio sin ningun archivo.
+2.- Hacer git init
+3.- git remote add origin <urldadaporgithubdelproyecto>
+4.- git remote --> Si ya est a creado el origin, muestra el origin.
+5.- git add . 
+6.- git commit -m "[Desarrollo] <Marcelo> Agregan comentarios a funciones"
+5.- git push -u origin master/main
+
+##BAJAR REPOSITORIOS - PASOS## (Sirve cuando es proyecto propio, o se es miembro de otro proyecto, si no, despues no se puede pushear.)
+1.-git clone <linkrepo> --> Posicionado en directorio donde se desea clonar un repositorio.
+
+CLONAR SOLO RAMA:
+1.-git clone <linkrepo> -b <nombrerama>
+
+BAJAR REPO CON GITFLOW:
+1.- git clone <linkrepo> --> Posicionado en directorio donde se desea clonar un repositorio.
+git hf init --> posicionado en repo para iniciarlo
+
+
+##SUBIR y Bajar REPO forma 2 -  PASOS## (Sirve cuando no se es dueño de un proyecto)
+1.- En github/gitlab --> Click en fork para copiar repositorio de otro, en el propio perfil.
+2.- Clonar el proyecto --> git clone <linkrepo>
+3.- git add . 
+4.- git commit -m <"mensaje">
+5.- Cuando se quiera pushear, hay que solucionar el tema de las credenciales en administracion de credenciales.
+6.- git push origin main
+7.- Pull/merge (github/gitlab) request.
+
+
+
+o tambien:
+
+1.- git init
+2.- git remote add origin <linkrepo>
+3.- git fetch --all
+4.- git pull origin master/main
+
+
+GITFLOW
+#---------------------------------------------------------#
+git hf feature start <nombrerama> ---> crear rama feature, pushearla, y checkout.
+git hf feature finish ---> finalizar rama feature.
+git hf push --> pushear cambios
+
+
+
+
+#---------------------------------------------------------#
+git help --> Muestra los comandos y lo que hacen
+git help <comando> --> Muestra mas info de un comando en particular
+git config --global user.name "<nuevonombre>"
+git config --global user.email "<nuevoemail>"
+git config --global user.pass "<pass>"
+git config -- global -e --> para ver el archivo
+git config --get remote.origin.url --> para obtener la url del repositorio en github cuando ya esta creado.
+git init -->iniciar repo, crea carpeta git dentro del directorio a repositear.
+git status -s(opcional) --> Muestra en que rama se encuentra uno, los cambios en los archivos desde el ultimo commit.
+git add . --> agrega todos los cambios hechos y los archivos del directorio.
+git add -u--> hacer update cuando se ha realizado un cambio como eliminar o renombrar.
+git add -A --> **Agrega todos los cambios y archivos, pero ademas, elimina si es que se elimino/renombró algun archivo del directorio**
+git add <nombrearchivo> <nombredeotroarchivo> --> lo mismo de arriba pero solo con el archivo especificado
+git add *.<extensiondearchivo> --> Agrega los archivos de una extension en particular.
+git commit -m "[nombrerama] <nombremio> Mensaje" --> añadir el comentario al commit.
+git commit --amend -m "<nuevomensaje>"  ---> remplazar ultimo commit.
+git log --> ver log de commits, con autor, fecha, mensaje, etc
+git log --oneline --decorate --all --graph --> lo de arriba pero mas bonito  ===> alias = lg
+git config --global alias.<nombrealias> "<comandos>"   --> abreviar comandos dentro de un alias.
+git push origin master --> sube todos los cambios commiteados al repo en github. Origin es un alias para el repositorio.
+git push origin <nombrerama> --> sube todos los cambios comiteados al repo en github, pero en vez de a la rama principal a una determinada.
+gut push origin --all --> hacer push de todas las ramas incluidas.
+git pull --> trae al pc lo que esta en github
+git fetch --> similar a pull pero sin traer los datos, requiere de un pull.
+
+git diff --staged --> muestra todos los cambios entre ultimo commit y modificaciones actuales.
+git diff <nombrerama1> <nombre rama2> --> muestra todo los cambios entre las dos ramas.
+
+
+
+
+
+**MANEJO DE RAMAS**
+git checkout -b <nombrenuevarama> --> crear una rama
+git branch <nombrerama> --> otra forma de crear una rama.
+git branch --> para ver en que rama estoy y mostrar todas las ramas existentes.
+git push --set-upstream origin <nombrerama> --> Para enviar una nueva rama creada en local hacia el repositorio.
+git checkout <nombrerama> --> para cambiar de rama
+git push -u origin <nombrerama --> para subir rama a github
+git branch -r --> permite ver todas las ramas, incluso las que estan en repo pero aun no en mi pc en local.
+git branch -d <branchname> --> borrar una rama.
+git merge <ramasecundaria> --> Para unir a la rama master, una rama secundaria. (fast fowward, cuando solo tiene cambios rama secundaria) (Union automatica, cuando hay cambios entre ambas) (union con conflicto, cuando ambas ramas modifican un mismo archivo o mas puede haber conflicto si es que modifican la misma linea)
+
+
+git remote -v --> ver todos los repositorios remotos.
+git remote remove <nombredelremoto>
+git checkout -- . --> Para recuperar todo despues de un cambio mal hecho
+git checkout -- <nombrearchivo> --> para restablecer archivo a lo ultimo commiteado.
+
+
+git reset --soft <numerohead del comit al ver el log en el cual se quiera posicionar>  --> Para eliminar ultimo commit, y hacer uno nuevo.
+git reset / git reset --mixed <numerohead> --> Deshacer un add, y sacarlo del staggin, para volver al punto donde se debe agregar (add) lo que se haya agregado anteriormente junto al ultimo commit y add.
+git reset --hard <numerohead> --> Para deshacer los ultimos cambios incluyendo los del mismo archivo, hasta los de un head determinado. Se puede volver a la instancia futura ejecutrando nuevamente el comando pero con el numero de dicha instancia.
+git reflog --> ver log incluyendo los quitados por reset
+git update-ref -d HEAD --> para deshacer el ultimo commit
+
+
+**IGNORAR ARCHIVOS DENTRO DEL REPO**
+Para ignorar archivos dentro del directorio del repositorio:
+1.- Crear archivo .gitignore
+2.- Para ignorar archivo se agrega nombre del archivo junto a su extension dentro del .gitignore... ej: mosiones.log
+3.- Para agregar un directorio se agrega nombre de directorio mas slash... Ej: nombre_directorio/
+
+
+**TAGS**
+git tag <nombredeltag> m"<msj>" --> Son referencias a committ en especifico, forma de darle nombre a una version.
+git tag --> ver tags creados
+git tag -d <nombretag> --> borrar tags
+git tag -a <nombredeltag> <hash del commit> -m "<mensaje>"     -->para ponerle tag a un commit antiguio... -a para indicar que ya existe.
+git show <nombre del tag> --> ver informacion de un tag
+git push --tags  --> subir tags al repo remoto, esdecir, a github.
+
+
+** GIT STASH PARA GUARDAR CAMBIOS NO TERMINADOS EN CASO DE REQUERIRSE, o guardarlos sin necesidad de añadirlos al stage**
+git stash --> para guardar cambios que no han sido movidos al stage (add) ni commiteados, y volver hasta el estado del ultimo commit. Luego se sigue trabajando normalmente, y se pueden volver a cargar.
+git stash save ""<mensaje>" --> Lo mismo que arriba, pero con mensaje incluido, como si fuera un commit.
+git stash pop (es una mezcla de apply y drop) --> Para volver a cargar los cambios que habian sido guardado en el stash y eliminar el stash previamente creado.... Requeriran que sean movidos al stage y commiteados, como toda modificacion.. Si se modificaron las mismas lineas entre que se hizo el stash y entre que se hizo el stash pop, habra conflictos de merge, y habra que seleccionar o dejar ambos cambios en el archivo.
+
+git stash drop --> para borrar un stash luego de que se hayan generado conflictos al cargarlo con git stash pop, ya que, si hay conflicto, se soluciona pero no se elimina el stash, requiere eliminicacion con drop.
+git stash list --> ver lista de stash.
+git stash list --stat --> para mostrar mas info de las entradas del stash y ver que cambios corresponden a ese stash
+git show stash@{idstash} --> para ver en mas detalle un stash
+git stash apply stash@{idstash} --> para restaurar un stash en particular.
+git stash drop stash@{idstash} --> para borrar un stash en particular.
+
+
+**REBASE**
+
+git rebase master/main --> Se hace estando posicionado en rama secundaria, sirve para mover los commit de la rama secundaria a un area temporal, y actualizar la rama secundaria al ultimo commit que se haya añadido en la principal, y finalmente movera los commit del area temporal nuevamente pero a la posicion final, es decir, despues de lo cargado de rama master.
+
+
+

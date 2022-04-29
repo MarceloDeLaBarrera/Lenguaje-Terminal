@@ -1,0 +1,90 @@
+
+pip install <nombrepaquete> .. o tambien : python -m pip install <nombrepaquete>
+pip list --> ver listado de paquetes
+pip show <nombre> --> ver mas datos
+
+Generar documentacion en la misma consola:
+python -m pydoc <ruta archivo>
+
+Generar documentacion automatica en HTML:
+python -m pydoc -w <ruta con archivo sin extension .py>
+
+
+##################### CREACION DE ENTORNO VIRTUAL ###########################################
+ Hay que posicionarse en carpeta donde se quiera crear entorno desde terminal de VSCODE.
+
+virtualenv -p python3 env
+
+#Activar entorno virtual para poder trabajar con y dentro de el.
+
+.\env\Scripts\activate
+
+#Si aparece un " (env) " previo a la ruta donde se ejecuta, es porque esta activado.
+
+
+#Para ejecutar dentro del entorno:
+
+python .\src\<nombre del archivo.py>
+
+#Exportar los paquetes que estan dentro del entorno:
+pip freeze > requirements.txt
+
+#Si se cambia de pc, se puede crear un nuevo entorno en dicho pc, y se le pueden meter el src y requeriments.txt del pc anterior, para asi trasladar proyecto e instalar los paquetes necesarios para el enterno virtual. Entonces, una vez dentro del entorno:
+
+pip install -r .\requirements.txt
+
+#Desactivar entorno virtual:
+deactivate
+
+
+####### DJANGO #########
+Iniciar proyecto Django. Se hace dentro del directorio en que se quiera inicializar el proyecto.
+django-admin startproject <NombreProyecto>
+
+Si se añade un punto al final en la linea anterior, se crea proyecto dentro del mismo directorio sin crear un nuevo directorio para dicho proyecto.
+django-admin startproject <NombreProyecto> . 
+
+Crear una aplicacion dentro del proyecto... Se hace dentro del directorio creado para almacenar y trabajar con la aplicacion.
+django-admin startapp <nombreapp>
+
+Chequea el estado de una app, para ver si esta todo ok, o si encuentra errores.
+python manage.py check <nombreapp>
+
+Realiza migraciones de los modelos dentro de models.py, y crea la base de datos pero vacia...
+python manage.py makemigrations                 
+
+Transformar codigo python de models a querys:
+python manage.py sqlmigrate <nombreapp> <numero de migracion dado en makemigrations>
+
+Rellenar BBDD. Por defecto sqlite3... Se hace dentro del directorio del proyecto.
+python manage.py migrate
+
+Generar backup de la BBDD en archivo .json con identado: (NOTA: Asegurarse de dejarlo configurado en UTF-8 en la parte inferior derecha)
+python manage.py dumpdata --indent 2 > database.json
+
+Cargar datos de BBDD: 
+python manage.py loaddata database.json
+
+si no funciona el anterior:
+.\<nombreapp>\fixtures\database.json
+
+
+
+Para iniciar servidor donde se monta el proyecto
+python manage.py runserver
+
+Para iniciar servidor pero con el archivo setting puesto dentro de una carpeta, ya sea local o produccion.
+python manage.py runserver --settings=settings.local
+
+Crear superuser para panel de administracion:
+python manage.py createsuperuser
+
+Entrar al modo shell (se hace posicionado en carpeta proyecto)
+python manage.py shell
+
+exit()
+Salir del modo shell.
+
+
+GENERAR SECRET KEYS DJANGO:
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
