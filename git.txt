@@ -116,6 +116,9 @@ git reset --hard <numerohead> --> Para deshacer los ultimos cambios incluyendo l
 git reflog --> ver log incluyendo los quitados por reset
 git update-ref -d HEAD --> para deshacer el ultimo commit
 
+git revert -m 1 <id commit>  --> Para revertir un merge.
+git revert <id commit> --> para revertir.
+
 
 **IGNORAR ARCHIVOS DENTRO DEL REPO**
 Para ignorar archivos dentro del directorio del repositorio:
