@@ -101,6 +101,10 @@ git checkout <nombrerama> --> para cambiar de rama
 git push -u origin <nombrerama --> para subir rama a github
 git branch -r --> permite ver todas las ramas, incluso las que estan en repo pero aun no en mi pc en local.
 git branch -d <branchname> --> borrar una rama.
+git branch -D <branchname> --> borrar una rama.
+git branch -m --> renombrar cambiar nombre rama
+git push origin --delete <branchname> ---> borrar rama del repo
+
 git merge <ramasecundaria> --> Para unir a la rama master, una rama secundaria. (fast fowward, cuando solo tiene cambios rama secundaria) (Union automatica, cuando hay cambios entre ambas) (union con conflicto, cuando ambas ramas modifican un mismo archivo o mas puede haber conflicto si es que modifican la misma linea)
 
 
@@ -115,6 +119,7 @@ git reset / git reset --mixed <numerohead> --> Deshacer un add, y sacarlo del st
 git reset --hard <numerohead> --> Para deshacer los ultimos cambios incluyendo los del mismo archivo, hasta los de un head determinado. Se puede volver a la instancia futura ejecutrando nuevamente el comando pero con el numero de dicha instancia.
 git reflog --> ver log incluyendo los quitados por reset
 git update-ref -d HEAD --> para deshacer el ultimo commit
+git reset HEAD^ 
 
 git revert -m 1 <id commit>  --> Para revertir un merge.
 git revert <id commit> --> para revertir.

@@ -11,7 +11,9 @@ python -m pydoc -w <ruta con archivo sin extension .py>
 
 
 ##################### CREACION DE ENTORNO VIRTUAL ###########################################
- Hay que posicionarse en carpeta donde se quiera crear entorno desde terminal de VSCODE.
+pip install virtualenv
+
+Hay que posicionarse en carpeta donde se quiera crear entorno desde terminal de VSCODE.
 
 virtualenv -p python3 env
 
@@ -58,6 +60,9 @@ python manage.py sqlmigrate <nombreapp> <numero de migracion dado en makemigrati
 
 Rellenar BBDD. Por defecto sqlite3... Se hace dentro del directorio del proyecto.
 python manage.py migrate
+
+Borrar migraciones
+python manage.py migrate zero
 
 Generar backup de la BBDD en archivo .json con identado: (NOTA: Asegurarse de dejarlo configurado en UTF-8 en la parte inferior derecha)
 python manage.py dumpdata --indent 2 > database.json

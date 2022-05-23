@@ -1,0 +1,4 @@
+npx create-react-app <nombre app> --> para crear una app react
+npm start --> Echar a andar proyecto.
+npm install <nombre libreria> --> para instalar
+npm uninstall <nombre libreria> --> para desinstalar

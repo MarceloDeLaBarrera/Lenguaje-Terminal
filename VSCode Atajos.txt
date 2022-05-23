@@ -7,6 +7,8 @@ CTRL+SHIFT+P = MOSTRAR COMANDOS
 F12= IR A DEFINICION
 CTRL+ SHIFT + C= OPEN NEW TERMINAL
 CTRL + SHIFT + 7 = COMENTAR CODIGO SELECCIONADO
+CTRL + K y luego CTRL + C = Para comentar codigo seleciconado
+CTRL + K y CTRL + U --> Para descomentar codigo
 
 Utilidad WRAP HTML
 CTRL+ SHIFT + P --> Seleccionar WRAP --> teclear empaquetador (div,table,section, etcetc)
