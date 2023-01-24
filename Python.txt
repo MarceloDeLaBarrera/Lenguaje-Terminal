@@ -55,14 +55,25 @@ python manage.py check <nombreapp>
 Realiza migraciones de los modelos dentro de models.py, y crea la base de datos pero vacia...
 python manage.py makemigrations                 
 
+Crear migraciones vacias
+python manage.py makemigrations <appname> --empty
+
+Crear migracion con nombre
+python manage.py makemigrations --name <nombremigracion>  <nombreapp (opcional)>
+
+Revertir Migracion:
+python manage.py migrate <my_app> <previous_number_migration> 
+
+Borrar migraciones
+python manage.py migrate <appname> zero
+
 Transformar codigo python de models a querys:
 python manage.py sqlmigrate <nombreapp> <numero de migracion dado en makemigrations>
 
 Rellenar BBDD. Por defecto sqlite3... Se hace dentro del directorio del proyecto.
 python manage.py migrate
 
-Borrar migraciones
-python manage.py migrate zero
+
 
 Generar backup de la BBDD en archivo .json con identado: (NOTA: Asegurarse de dejarlo configurado en UTF-8 en la parte inferior derecha)
 python manage.py dumpdata --indent 2 > database.json
@@ -93,3 +104,37 @@ Salir del modo shell.
 
 GENERAR SECRET KEYS DJANGO:
 python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+
+
+
+
+"build": "REACT_APP_ENDPOINT=http://127.0.0.1:8000 REACT_APP_WEBSOCKET=wss://127.0.0.1:8000 react-scripts build",
+"build": "REACT_APP_ENDPOINT=https://backoffice.capitaria.com REACT_APP_WEBSOCKET=wss://backoffice.capitaria.com react-scripts build",
+
+
+
+Mejoras:
+
+- Ver problema a resolver
+- Compartir conocimiento encontrado en wsp
+- Proponer ideas (2 mensuales)
+- Preparar reuniones
+
+
+naranja, espinaca, acelga, tomate para vitaminas
+te verde, cebolla para circulacion
+
+
+
+
+me fije rauw alejandro
+
+RTX 3070 --> 5.2 cm ancho
+
+MSI VENTUS X3 4080 --> 6.3 cm ancho
+ZOTAC 4080 --> 7.1 cm ancho
+PNY NVIDIA GeForce RTX 4090 XLR8 7.1 cm
+PNY NVIDA GERFORCE RTX 4080 (MANLI GALLARDO) 6.3 cm ancho
+
+
+GAMIN X TRIO 4090 --> 7.7 CM ANCHO

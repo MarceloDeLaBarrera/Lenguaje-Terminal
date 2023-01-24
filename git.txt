@@ -44,7 +44,7 @@ GITFLOW
 #---------------------------------------------------------#
 git hf feature start <nombrerama> ---> crear rama feature, pushearla, y checkout.
 git hf feature finish ---> finalizar rama feature.
-git hf cancel -f --> cancelar una rama o finalizarla sin necesidad de que se haya hecho la pull request
+git hf feature cancel -f --> cancelar una rama o finalizarla sin necesidad de que se haya hecho la pull request
 git hf push --> pushear cambios
 
 
@@ -118,11 +118,9 @@ git reset --soft <numerohead del comit al ver el log en el cual se quiera posici
 git reset / git reset --mixed <numerohead> --> Deshacer un add, y sacarlo del staggin, para volver al punto donde se debe agregar (add) lo que se haya agregado anteriormente junto al ultimo commit y add.
 git reset --hard <numerohead> --> Para deshacer los ultimos cambios incluyendo los del mismo archivo, hasta los de un head determinado. Se puede volver a la instancia futura ejecutrando nuevamente el comando pero con el numero de dicha instancia.
 git reflog --> ver log incluyendo los quitados por reset
-git update-ref -d HEAD --> para deshacer el ultimo commit
-git reset HEAD^ 
 
 git revert -m 1 <id commit>  --> Para revertir un merge.
-git revert <id commit> --> para revertir.
+git revert <id commit> --> para revertir (ojo que borra los cambios del archivo al estado anterior)
 
 
 **IGNORAR ARCHIVOS DENTRO DEL REPO**
