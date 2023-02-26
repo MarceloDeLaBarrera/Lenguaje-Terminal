@@ -1,0 +1,62 @@
+EN WINDOWS / LINUX
+
+Instalar WSL en windows
+Generar SSH para github
+hacer git clone del proyecto
+
+INSTALAR PYTHON x.version en LINUX WSL
+
+https://vegastack.com/tutorials/how-to-install-python-3-7-on-ubuntu-20-04/
+https://gist.github.com/j40903272/a4b715b79b2e5aa74342fe995a1c1ef9
+https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
+
+CAMBIAR VERSION DE PYTHON DE WSL
+https://askubuntu.com/questions/1120474/setting-python3-to-version-3-7-on-wsl
+
+INSTALAR PIP:
+sudo apt install python3-pip
+
+Nota: Si hay error... 
+which pip --> para obtener ruta
+sudo nano <ruta> --> para abrir y modificar archivo pip del error.
+modificar y cambiar a : from pip._internal import main
+
+instalar 
+sudo apt-get install libpq-dev (para postgre)
+apt-get install libxml2-dev libxmlsec1-dev libxmlsec1-openssl (para xmlsec)
+
+instalar pipenv
+pip3 install pipenv
+
+instalar entorno virtual de pipenv
+pipenv install
+
+
+EN MAC
+
+Instalar todos los paquetes, luego por home brew python 3.7 y luego desde el sitio web de python bajar e instalar python 3.7.3
+
+run pipenv shell --> Para activar entorno virtual
+pipenv run + comandos python clasicos --> para correr cualquier comando dentro del entorno virtual
+
+
+
+
+git config --global user.email marcelo@uppercap.com
+git config --global user.name "Marcelo"
+
+
+
+
+CODIGOS DE RECUPERACION 2FACTOR GITLAB marcelo@uppercap.com
+
+71c1ddadde497891
+a8b7117f3e359547
+0b6dbde5db891c2f
+94046de65de30397
+c95ab7ac8be63b51
+01912b8ebe55abce
+1b57883ece0342e9
+653ca9d84a5b761e
+3b3e08e7d5b22f21
+49f2cc374fee9144

@@ -15,6 +15,9 @@ windows + v --> para ver portapapeles
 
 
 
+Comando para listar contenido de un directorio:
+dir/b>list.txt
+
 
 Linux:
 
