@@ -33,8 +33,30 @@ touch <nombrearchivo> --> para crear archivo
 
 ssh-keygen   -> puros enter para generar ssh-key
 cat <ruta ssh>  -->  para abrirla y ver contenido
+open <ruta> --> lo mismo
+
+pwd --> obtener ruta actual
 
 code . --> en ruta de proyecto, para abrir proyecto con linux en vscode 
 
+bzip2 -dk filename.bz2 --> descomprimir bz2
 
 
+postgres:
+sudo service postgresql start --> iniciar servicio
+sudo service postgresql stop --> detener servicio
+sudo -u postgres psql --> iniciar instancia postgresql
+sudo -u postgres dropdb mydb --> borrar db
+sudo -u postgres createdb mydb --> crear db
+sudo psql -u <user> -d <database> --> conectarse a db con user
+psql -d <db> -U <user> -p <puerto> --> CONECTARSE A DB con user y puerto 
+
+psql ->
+\l   --> listar base de datos
+alter user <username> with encrypted password '<password>'; --> asignar usuario y contraseña 
+\q  --> salir
+\du --> listar usuarios
+CREATE ROLE username superuser; --> crer rol superusuario
+ALTER ROLE username with superuser
+\c <database> --> para usar una base de datos en particular
+\i ‘D:/Work/articles/Sample.sql’ --> correr script

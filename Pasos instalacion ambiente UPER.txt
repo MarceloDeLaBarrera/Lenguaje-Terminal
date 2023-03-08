@@ -31,13 +31,103 @@ pip3 install pipenv
 instalar entorno virtual de pipenv
 pipenv install
 
+instalar ninja app dentro de uppercap donde estan las otras apps.
+
+git clone ssh://git@168.119.85.154:41453/uper/ninja-app.git
+
+Entrar a la ruta de ninja app, y cambiar de rama
+cd ninja-app
+git checkout uppercap
+
+Cambiar nombre de la carpeta ninja-app a ninja
+
+Instalar postgreSql
+sudo apt install postgresql postgresql-contrib
+
+establecer contraseña de postgres
+sudo passwd postgres
+
+iniciar servidor 
+sudo service postgresql start
+
+crear base de datos en caso de conectar de forma local
+$ sudo -u postgres createdb <dbname>
+
+conectarse a la linea de comandos de postgres
+sudo -u postgres psql
+
+listar base de datos
+\l
+
+asignar usuario y contraseña 
+alter user <username> with encrypted password '<password>';
+
+salir
+\q
+
+Configurar PostgreSql para conectarse al servidor o para crear la base de datos local. En caso de que sea lo segundo, remplazar los valores del archivo .env
+
+Crear migraciones:
+python manage.py makemigrations users platform payment_method ninja landing
+
+Realizar Migraciones:
+pipenv run python manage.py migrate
+pipenv run python manage.py migrate users
+pipenv run python manage.py migrate platform
+pipenv run python manage.py migrate payment_method
+pipenv run python manage.py migrate landing
+
+Crear superusuario:
+python manage.py createsuperuser
+
 
 EN MAC
 
-Instalar todos los paquetes, luego por home brew python 3.7 y luego desde el sitio web de python bajar e instalar python 3.7.3
+Instalar todos los paquetes asociados por brew, los equivalentes a:
+sudo apt-get install libpq-dev libmagic1 gcc 
+apt-get pkg-config install libxml2-dev libxmlsec1-dev libxmlsec1-openssl
+
+Luego por home brew instalar python 3.7 y luego desde el sitio web de python bajar e instalar python 3.7.3
+Instalar postgre 14 por brew
+pipenv install 
+pipenv install xmlsec==1.3.13
+
 
 run pipenv shell --> Para activar entorno virtual
 pipenv run + comandos python clasicos --> para correr cualquier comando dentro del entorno virtual
+
+
+instalar ninja app dentro de uppercap donde estan las otras apps.
+
+git clone ssh://git@168.119.85.154:41453/uper/ninja-app.git
+
+Entrar a la ruta de ninja app, y cambiar de rama
+cd ninja-app
+git checkout uppercap
+
+Cambiar nombre de la carpeta ninja-app a ninja
+
+Instalar postgreSql por medio del brew y tambien desde la pagina oficial
+
+Configurar PostgreSql para conectarse al servidor o para crear la base de datos local. En caso de que sea lo segundo, remplazar los valores del archivo .env
+
+Crear migraciones:
+python manage.py makemigrations users platform payment_method ninja landing
+
+Realizar Migraciones:
+pipenv run python manage.py migrate
+pipenv run python manage.py migrate users
+pipenv run python manage.py migrate platform
+pipenv run python manage.py migrate payment_method
+pipenv run python manage.py migrate landing
+
+Crear superusuario:
+python manage.py createsuperuser
+
+source .env   --> para actualizar la lectura al .env
+
+
+
 
 
 
