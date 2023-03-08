@@ -113,7 +113,7 @@ git remote remove <nombredelremoto>
 git checkout -- . --> Para recuperar todo despues de un cambio mal hecho
 git checkout -- <nombrearchivo> --> para restablecer archivo a lo ultimo commiteado.
 
-
+git reset HEAD~1 --> para deshacer ultimo commit que aun no ha sido pusheado.
 git reset --soft <numerohead del comit al ver el log en el cual se quiera posicionar>  --> Para eliminar ultimo commit, y hacer uno nuevo.
 git reset / git reset --mixed <numerohead> --> Deshacer un add, y sacarlo del staggin, para volver al punto donde se debe agregar (add) lo que se haya agregado anteriormente junto al ultimo commit y add.
 git reset --hard <numerohead> --> Para deshacer los ultimos cambios incluyendo los del mismo archivo, hasta los de un head determinado. Se puede volver a la instancia futura ejecutrando nuevamente el comando pero con el numero de dicha instancia.
