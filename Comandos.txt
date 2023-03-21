@@ -60,3 +60,4 @@ CREATE ROLE username superuser; --> crer rol superusuario
 ALTER ROLE username with superuser
 \c <database> --> para usar una base de datos en particular
 \i ‘D:/Work/articles/Sample.sql’ --> correr script
+DROP DATABASE <DB_NAME> WITH (FORCE) --> borrar base de datos
