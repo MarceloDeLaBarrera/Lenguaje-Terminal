@@ -120,7 +120,7 @@ git reset --hard <numerohead> --> Para deshacer los ultimos cambios incluyendo l
 git reflog --> ver log incluyendo los quitados por reset
 
 git revert -m 1 <id commit>  --> Para revertir un merge.
-git revert <id commit> --> para revertir (ojo que borra los cambios del archivo al estado anterior)
+git revert <id commit> --> para revertir un commit (ojo que borra los cambios del archivo al estado anterior)
 
 
 **IGNORAR ARCHIVOS DENTRO DEL REPO**

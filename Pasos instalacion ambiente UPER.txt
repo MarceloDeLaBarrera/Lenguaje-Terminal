@@ -68,17 +68,32 @@ salir
 Configurar PostgreSql para conectarse al servidor o para crear la base de datos local. En caso de que sea lo segundo, remplazar los valores del archivo .env
 
 Crear migraciones:
+python manage.py makemigrations
 python manage.py makemigrations users platform payment_method ninja landing
 
+Realizar dumpeo de base de datos:
+cat uppercap_2023-02-13-17.29.22.sql.bz2* > uppercap_2023-02-13-17.29.22.sql.bz2 --> para unir dos archivos bz2
+bzip2 -dk filename.bz2 --> descomprimir bz2 
+
+Conectarse al servicio de postgre, linea de comandos
+sudo psql -d <db> -U <user> -p <puerto> --> CONECTARSE A DB con user y puerto 
+sudo -u postgres psql
+
+Estando dentro de consola Psql, correr el siguiente comando para utilizar el script sql:
+Create DATABASE xxxx
+create role uppercap 
+CREATE ROLE uppercap superuser; --> crer rol superusuario
+ALTER ROLE uppercap with superuser;
+grant all privileges on database uppercap to uppercap ;
+\c <database> <user>--> para usar una base de datos en particular con un nombre de usuario
+\i ‘D:/Work/articles/Sample.sql’ --> correr script
+
 Realizar Migraciones:
-pipenv run python manage.py migrate
-pipenv run python manage.py migrate users
-pipenv run python manage.py migrate platform
-pipenv run python manage.py migrate payment_method
-pipenv run python manage.py migrate landing
+pipenv run python manage.py migrate --fake
 
 Crear superusuario:
 python manage.py createsuperuser
+
 
 
 EN MAC
@@ -112,31 +127,55 @@ Instalar postgreSql por medio del brew y tambien desde la pagina oficial
 Configurar PostgreSql para conectarse al servidor o para crear la base de datos local. En caso de que sea lo segundo, remplazar los valores del archivo .env
 
 Crear migraciones:
+python manage.py makemigrations
 python manage.py makemigrations users platform payment_method ninja landing
 
+Realizar dumpeo de base de datos:
+cat uppercap_2023-02-13-17.29.22.sql.bz2* > uppercap_2023-02-13-17.29.22.sql.bz2 --> para unir dos archivos bz2
+bzip2 -dk filename.bz2 --> descomprimir bz2 
+
+Conectarse al servicio de postgre
+sudo service postgresql start --> iniciar servicio
+sudo passwd postgres --> establecer contraseña de postgres
+psql -d <db> -U <user> -p <puerto> --> CONECTARSE A DB con user y puerto 
+
+Estando dentro de consola Psql, correr el siguiente comando para utilizar el script sql:
+Create DATABASE xxxx
+create role uppercap 
+CREATE ROLE uppercap superuser; --> crer rol superusuario
+ALTER ROLE uppercap with superuser;
+grant all privileges on database uppercap to uppercap ;
+\c <database> <user>--> para usar una base de datos en particular con un nombre de usuario
+\i ‘D:/Work/articles/Sample.sql’ --> correr script
+
 Realizar Migraciones:
-pipenv run python manage.py migrate
-pipenv run python manage.py migrate users
-pipenv run python manage.py migrate platform
-pipenv run python manage.py migrate payment_method
-pipenv run python manage.py migrate landing
+pipenv run python manage.py migrate --fake
 
 Crear superusuario:
 python manage.py createsuperuser
 
 source .env   --> para actualizar la lectura al .env
 
+Para conectar por SSH a Uppertest, correr desde otra terminal:
+ssh test@uppertest.dysopsis.com
 
+Contraseña usuario postgres para base de datos test: 123Momia.
 
+restore_backup.sh --> Vuelve a levantar Uper y Ninja con la ultima copia de BD
+restart_uppercap.sh --> Restaura Uper desde 0
+restart_ninja.sh --> Restaura Ninja desde 0
 
+Ejecutar scripts sh
+bash <script>
 
+Para hacer minify a js files:
+bash utility/deploy/uglify.sh --test
+
+Para traer los cambios subidos en rama de testing, hacer git pull
 
 
 git config --global user.email marcelo@uppercap.com
 git config --global user.name "Marcelo"
-
-
-
 
 CODIGOS DE RECUPERACION 2FACTOR GITLAB marcelo@uppercap.com
 
