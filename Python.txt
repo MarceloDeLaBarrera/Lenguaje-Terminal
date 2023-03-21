@@ -73,6 +73,35 @@ python manage.py sqlmigrate <nombreapp> <numero de migracion dado en makemigrati
 Rellenar BBDD. Por defecto sqlite3... Se hace dentro del directorio del proyecto.
 python manage.py migrate
 
+Crear nuevo campo en modelo:
+Al crear nuevo campo, asignar null y blank como True para que no tenga conflictos con registros previos, o asignar un valor default.
+
+Como migrar un valor default a los registros ya existentes de una BD:
+1.- Crear campo con valor default
+2.- Crear migracion con makemigrations
+3.- Crear migracion vacia con --> manage.py makemigrations --empty <app_name>
+4.- Rellenar dicho archivo con:
+
+from django.db import migrations
+
+def set_default_value(apps, schema_editor):
+    MyModel = apps.get_model('myapp', 'MyModel')
+    MyModel.objects.filter(my_field=None).update(my_field='my_default_value')
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('myapp', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.RunPython(set_default_value),
+    ]
+
+5.- Aplicar migraciones con python manage.py migrate <app_name>
+
+6.-
+
 
 
 Generar backup de la BBDD en archivo .json con identado: (NOTA: Asegurarse de dejarlo configurado en UTF-8 en la parte inferior derecha)
