@@ -154,6 +154,8 @@ pipenv run python manage.py migrate --fake
 Crear superusuario:
 python manage.py createsuperuser
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 source .env   --> para actualizar la lectura al .env
 
 Para conectar por SSH a Uppertest, correr desde otra terminal:
@@ -168,10 +170,16 @@ restart_ninja.sh --> Restaura Ninja desde 0
 Ejecutar scripts sh
 bash <script>
 
+Para ver screen de Django (consola):
+screen -r django
+
 Para hacer minify a js files:
 bash utility/deploy/uglify.sh --test
 
 Para traer los cambios subidos en rama de testing, hacer git pull
+
+Para modificar htmls asociados a pre_compiled.js:
+handlebars templates/platform/reserve/reserve_card.html -f static/platform/js/reserve/reserve_card.precompiled.js
 
 
 git config --global user.email marcelo@uppercap.com
