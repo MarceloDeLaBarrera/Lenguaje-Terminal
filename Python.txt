@@ -135,35 +135,33 @@ GENERAR SECRET KEYS DJANGO:
 python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
 
 
+DJANGO QUERYS:
 
+Para crear un objeto
+Obj.objects.create()
 
-"build": "REACT_APP_ENDPOINT=http://127.0.0.1:8000 REACT_APP_WEBSOCKET=wss://127.0.0.1:8000 react-scripts build",
-"build": "REACT_APP_ENDPOINT=https://backoffice.capitaria.com REACT_APP_WEBSOCKET=wss://backoffice.capitaria.com react-scripts build",
+Para obtener un objeto
+Obj.objects.get()
 
+Para obtener un queryset de un objetos
+Obj.objects.filter()
 
+Para obtener el equivalente en query de una queryset.
+.query
 
-Mejoras:
+Para obtener los valores de un campo de los objetos retornados en el queryset en forma de lista.
+Obj.objects.filter(condition).values_list('<field>', flat=True)
 
-- Ver problema a resolver
-- Compartir conocimiento encontrado en wsp
-- Proponer ideas (2 mensuales)
-- Preparar reuniones
+Django queryset Filters:
+<field>__lte => less than
+<field>__gte => greather than
+<field>__isnull => si es None o null
+<foreignkey_field>__field ==> para acceder a los campos de la tabla de una llave foranea.
+<field>__in ==> para ver si campo esta dentro de elementos de un listado.
+<field>__contains ==> para ver si el valor del campo contiene "x" valor.
+
 
 
 naranja, espinaca, acelga, tomate para vitaminas
 te verde, cebolla para circulacion
 
-
-
-
-me fije rauw alejandro
-
-RTX 3070 --> 5.2 cm ancho
-
-MSI VENTUS X3 4080 --> 6.3 cm ancho
-ZOTAC 4080 --> 7.1 cm ancho
-PNY NVIDIA GeForce RTX 4090 XLR8 7.1 cm
-PNY NVIDA GERFORCE RTX 4080 (MANLI GALLARDO) 6.3 cm ancho
-
-
-GAMIN X TRIO 4090 --> 7.7 CM ANCHO

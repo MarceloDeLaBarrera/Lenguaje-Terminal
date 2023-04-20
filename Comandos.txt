@@ -30,6 +30,10 @@ rm -rf <nombre carpeta o archivo>  --> Para borrar posicionado en carpeta donde 
 nano <nombrearchivo> --> para modificar archivo
 touch <nombrearchivo> --> para crear archivo
 
+screen -S <nombre> --> Para crear una nueva screen
+ctrl A + D --> En screen es para salir de la misma sin cerrarla
+exit --> cerrar screen
+screen -r <nombre> --> Para entrar a screen existente
 
 ssh-keygen   -> puros enter para generar ssh-key
 cat <ruta ssh>  -->  para abrirla y ver contenido

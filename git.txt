@@ -43,6 +43,7 @@ o tambien:
 GITFLOW
 #---------------------------------------------------------#
 git hf feature start <nombrerama> ---> crear rama feature, pushearla, y checkout.
+» git hf feature start <nombrerama> <nombreramabase> --> crear rama feature con base definida que no sea develop.     
 git hf feature finish ---> finalizar rama feature.
 git hf feature cancel -f --> cancelar una rama o finalizarla sin necesidad de que se haya hecho la pull request
 git hf push --> pushear cambios
@@ -109,7 +110,11 @@ git merge <ramasecundaria> --> Para unir a la rama master, una rama secundaria. 
 
 
 git remote -v --> ver todos los repositorios remotos.
+git remote add origin <urldadaporgithubdelproyecto> --> para añadir un remoto.
+git remote --> Si ya est a creado el origin, muestra el origin.
+git remote set-url <origin o otro remoto> <ssh del proyecto> --> Cambiar la url del remoto.
 git remote remove <nombredelremoto>
+
 git checkout -- . --> Para recuperar todo despues de un cambio mal hecho
 git checkout -- <nombrearchivo> --> para restablecer archivo a lo ultimo commiteado.
 
